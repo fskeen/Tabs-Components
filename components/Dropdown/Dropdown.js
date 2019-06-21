@@ -20,6 +20,13 @@ class Dropdown {
     
     // Toggle the ".dropdown-hidden" class off and on
     this.content.classList.toggle('dropdown-hidden');
+
+    if (this.content.classList.length > 1) { // when it's closed
+    TweenMax.to(".dropdown-content", .5, {yPercent: 0, opacity: 0});
+    } else { // when it's opening
+    TweenMax.to(".dropdown-content", .5, {yPercent: 15, opacity: 1});
+    }
+   
   }
 }
 
